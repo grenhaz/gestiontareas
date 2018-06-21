@@ -1,2 +1,3 @@
-# gestiontareas
-Java Application for Task Management
+# Gestión de Tarea
+
+Aplicación para la gestión de tareas.
