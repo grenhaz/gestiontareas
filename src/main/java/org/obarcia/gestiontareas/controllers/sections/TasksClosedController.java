@@ -2,6 +2,8 @@ package org.obarcia.gestiontareas.controllers.sections;
 
 import java.net.URL;
 import java.sql.Timestamp;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
@@ -24,7 +26,6 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.ContextMenuEvent;
 import javafx.scene.input.MouseButton;
 import javafx.util.Callback;
-import org.obarcia.gestiontareas.components.ComboItem;
 import org.obarcia.gestiontareas.components.Language;
 import org.obarcia.gestiontareas.components.ListTable;
 import org.obarcia.gestiontareas.components.TableResizePolicy;
@@ -66,12 +67,16 @@ public class TasksClosedController extends SectionController
      */
     private String filterString = "";
     /**
+     * Listado de sorting.
+     */
+    private List<String> sorting = new ArrayList<>();
+    /**
      * Menú contextual
      */
     private ContextMenu ctxMenu;
     
     @FXML
-    private TableView tblTasks;
+    private TableView<Tarea> tblTasks;
     @FXML
     private TextField txtSearch;
     @FXML
@@ -98,7 +103,8 @@ public class TasksClosedController extends SectionController
         super.initialize(url, rb);
         
         // Cargar los datos
-        ListTable<Tarea> l = service.getTareasCerradas(offset, size, filterString);
+        sorting.add("actualizacion desc");
+        ListTable<Tarea> l = service.getTareasCerradas(offset, size, filterString, (String[])sorting.toArray());
         totalRecords = l.getTotal();
         tareas.addAll(l.getRecords());
         
@@ -112,12 +118,12 @@ public class TasksClosedController extends SectionController
         TableColumn colStatus = new TableColumn(Language.getString("COLUMN_STATUS"));
         TableColumn colUpdate = new TableColumn(Language.getString("COLUMN_UPDATE"));
         
-        // Deshabilitar la ordenación
-        colId.setSortable(false);
+        // TODO: Deshabilitar la ordenación
+        /*colId.setSortable(false);
         colEntity.setSortable(false);
         colTitle.setSortable(false);
         colStatus.setSortable(false);
-        colUpdate.setSortable(false);
+        colUpdate.setSortable(false);*/
         
         // Sizes
         colId.setMinWidth(64);
@@ -230,6 +236,20 @@ public class TasksClosedController extends SectionController
             offset = 0;
             filterString = newValue.toUpperCase();
             refreshData();
+        });
+        
+        // Ordenación personalizada
+        tblTasks.sortPolicyProperty().set(new Callback<TableView<Tarea>, Boolean>() {
+            @Override
+            public Boolean call(TableView<Tarea> param) {
+                sorting.clear();
+                for (TableColumn c: param.getSortOrder()) {
+                    sorting.add(c.toString());
+                }
+                refreshData();
+                
+                return true;
+            }
         });
 
         // Asignar los items a la tabla
@@ -431,7 +451,7 @@ public class TasksClosedController extends SectionController
     private void refreshData()
     {
         // Obtener las tareas
-        ListTable<Tarea> l = service.getTareasCerradas(offset, size, filterString);
+        ListTable<Tarea> l = service.getTareasCerradas(offset, size, filterString, (String[])sorting.toArray());
         totalRecords = l.getTotal();
         tareas.clear();
         tareas.addAll(l.getRecords());

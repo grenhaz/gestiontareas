@@ -86,9 +86,9 @@ public class GestionServiceImpl implements GestionService
         return dao.getTareas();
     }
     @Override
-    public ListTable<Tarea> getTareasCerradas(int offset, int size, String filter)
+    public ListTable<Tarea> getTareasCerradas(int offset, int size, String filter, String[] sorting)
     {
-        return dao.getTareasCerradas(offset, size, filter);
+        return dao.getTareasCerradas(offset, size, filter, sorting);
     }
     @Override
     public Entidad getEntidad(Integer id)

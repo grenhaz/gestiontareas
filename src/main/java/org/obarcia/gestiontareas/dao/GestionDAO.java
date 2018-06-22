@@ -44,9 +44,10 @@ public interface GestionDAO
      * @param offset Offset de inicio del listado.
      * @param size Tamaño del listado.
      * @param filter Filtro.
+     * @param sorting Listado de ordenación.
      * @return Listado de Tareas.
      */
-    public ListTable<Tarea> getTareasCerradas(int offset, int size, String filter);
+    public ListTable<Tarea> getTareasCerradas(int offset, int size, String filter, String[] sorting);
     /**
      * Devuelve una entidad.
      * @param id Identificador de la entidad.

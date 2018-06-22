@@ -124,7 +124,7 @@ public class GestionDAOImpl implements GestionDAO
         return list;
     }
     @Override
-    public ListTable<Tarea> getTareasCerradas(int offset, int size, String filter)
+    public ListTable<Tarea> getTareasCerradas(int offset, int size, String filter, String[] sorting)
     {
         ListTable<Tarea> list = new ListTable<>();
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
@@ -169,6 +169,7 @@ public class GestionDAOImpl implements GestionDAO
             }
             
             // Order By
+            // TODO: Aplicar la ordenación
             criteria.orderBy(builder.desc(root.get("actualizacion")));
         
             // Query

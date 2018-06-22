@@ -36,7 +36,7 @@ public class TableResizePolicy implements Callback<TableView.ResizeFeatures, Boo
             return false;
         }
         /*if (column != null) {
-            // TODO: v2: Reajustar columnas para encajar esta
+            // XXX: Reajustar columnas para encajar esta
             // Resize manual de una columna
             if (column.isResizable() && column.isVisible()) {
                 // Calcular el total de las columnas
