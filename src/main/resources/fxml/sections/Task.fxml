@@ -15,13 +15,13 @@
          <tooltip>
             <Tooltip text="%TOOLTIP_TITULO" />
          </tooltip></Label>
-      <CTextField fx:id="txtTitle" layoutX="90.0" layoutY="14.0" maxLength="256" prefHeight="25.0" prefWidth="500.0" styleClass="required" AnchorPane.leftAnchor="90.0" AnchorPane.rightAnchor="21.0" AnchorPane.topAnchor="14.0" />
+      <CTextField fx:id="txtTitle" layoutX="90.0" layoutY="14.0" maxLength="256" prefHeight="25.0" prefWidth="500.0" styleClass="required" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="21.0" AnchorPane.topAnchor="14.0" />
       <TextArea fx:id="txtContent" layoutX="24.0" layoutY="54.0" prefHeight="185.0" prefWidth="566.0" AnchorPane.bottomAnchor="150.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="50.0" />
       <Label layoutX="21.0" layoutY="330.0" text="%ATTRIBUTE_ENTIDAD" AnchorPane.bottomAnchor="119.0" AnchorPane.leftAnchor="20.0">
          <tooltip>
             <Tooltip text="%TOOLTIP_ENTIDAD" />
          </tooltip></Label>
-      <HBox layoutX="100.0" layoutY="326.0" onMouseClicked="#actionTextEntitySelect" AnchorPane.bottomAnchor="117.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="20.0">
+      <HBox layoutX="100.0" layoutY="326.0" onMouseClicked="#actionTextEntitySelect" AnchorPane.bottomAnchor="117.0" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="20.0">
          <children>
              <Button fx:id="btEntityClean" mnemonicParsing="false" onAction="#actionEntityClean" prefHeight="23.0" prefWidth="24.0" style="-fx-background-radius: 4 0 0 4;">
                <graphic>
@@ -60,12 +60,12 @@
          <tooltip>
             <Tooltip text="%TOOLTIP_ESTADO" />
          </tooltip></Label>
-      <ComboBox fx:id="cbStatus" layoutX="90.0" layoutY="293.0" prefWidth="180.0" styleClass="required" AnchorPane.bottomAnchor="80.0" AnchorPane.leftAnchor="100.0" />
-      <Label layoutX="328.0" layoutY="406.0" text="%ATTRIBUTE_LIMITE" AnchorPane.bottomAnchor="82.0" AnchorPane.leftAnchor="300.0">
+      <ComboBox fx:id="cbStatus" layoutX="90.0" layoutY="293.0" prefWidth="180.0" styleClass="required" AnchorPane.bottomAnchor="80.0" AnchorPane.leftAnchor="150.0" />
+      <Label layoutX="328.0" layoutY="406.0" text="%ATTRIBUTE_LIMITE" AnchorPane.bottomAnchor="82.0" AnchorPane.leftAnchor="360.0">
          <tooltip>
             <Tooltip text="%TOOLTIP_LIMITE" />
          </tooltip></Label>
-      <HBox layoutX="366.0" layoutY="389.0" onMouseClicked="#actionTextEntitySelect" AnchorPane.bottomAnchor="80.0" AnchorPane.leftAnchor="380.0">
+      <HBox layoutX="366.0" layoutY="389.0" onMouseClicked="#actionTextEntitySelect" AnchorPane.bottomAnchor="80.0" AnchorPane.leftAnchor="470.0">
          <children>
              <Button fx:id="btLimiteClean" mnemonicParsing="false" onAction="#actionLimiteClean" prefHeight="25.0" prefWidth="24.0" style="-fx-background-radius: 4 0 0 4;">
                <graphic>

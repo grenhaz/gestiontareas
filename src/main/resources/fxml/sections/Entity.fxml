@@ -13,12 +13,12 @@
          <tooltip>
             <Tooltip text="%TOOLTIP_DOI" />
          </tooltip></Label>
-      <CTextField fx:id="txtDoi" layoutX="90.0" layoutY="19.0" maxLength="9" prefHeight="25.0" prefWidth="150.0" styleClass="required" AnchorPane.leftAnchor="140.0" AnchorPane.topAnchor="19.0" />
+      <CTextField fx:id="txtDoi" layoutX="90.0" layoutY="19.0" maxLength="9" prefHeight="25.0" prefWidth="150.0" styleClass="required" AnchorPane.leftAnchor="140.0" AnchorPane.topAnchor="20.0" />
       <Label layoutX="14.0" layoutY="61.0" text="%ATTRIBUTE_NOMBRE" underline="true" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="63.0">
          <tooltip>
             <Tooltip text="%TOOLTIP_NOMBRE" />
          </tooltip></Label>
-      <CTextField fx:id="txtName" layoutX="90.0" layoutY="57.0" maxLength="256" prefHeight="25.0" prefWidth="353.0" styleClass="required" AnchorPane.leftAnchor="140.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="57.0" />
+      <CTextField fx:id="txtName" layoutX="90.0" layoutY="57.0" maxLength="256" prefHeight="25.0" prefWidth="353.0" styleClass="required" AnchorPane.leftAnchor="140.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="57.0" />
       <Label layoutX="17.0" layoutY="95.0" text="%ATTRIBUTE_TELEFONO" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="97.0">
          <tooltip>
             <Tooltip text="%TOOLTIP_TELEFONO" />
