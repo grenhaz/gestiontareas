@@ -19,6 +19,7 @@ import javafx.scene.control.MenuItem;
 import javafx.scene.control.SeparatorMenuItem;
 import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableColumn.SortType;
 import javafx.scene.control.TableRow;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
@@ -104,7 +105,7 @@ public class TasksClosedController extends SectionController
         
         // Cargar los datos
         sorting.add("actualizacion desc");
-        ListTable<Tarea> l = service.getTareasCerradas(offset, size, filterString, (String[])sorting.toArray());
+        ListTable<Tarea> l = service.getTareasCerradas(offset, size, filterString, sorting.toArray(new String[sorting.size()]));
         totalRecords = l.getTotal();
         tareas.addAll(l.getRecords());
         
@@ -118,12 +119,12 @@ public class TasksClosedController extends SectionController
         TableColumn colStatus = new TableColumn(Language.getString("COLUMN_STATUS"));
         TableColumn colUpdate = new TableColumn(Language.getString("COLUMN_UPDATE"));
         
-        // TODO: Deshabilitar la ordenación
-        /*colId.setSortable(false);
-        colEntity.setSortable(false);
-        colTitle.setSortable(false);
-        colStatus.setSortable(false);
-        colUpdate.setSortable(false);*/
+        // Asignar la columna de ordenación
+        colId.setUserData("id");
+        colEntity.setUserData("entidad");
+        colTitle.setUserData("titulo");
+        colStatus.setUserData("estado");
+        colUpdate.setUserData("actualizacion");
         
         // Sizes
         colId.setMinWidth(64);
@@ -244,7 +245,7 @@ public class TasksClosedController extends SectionController
             public Boolean call(TableView<Tarea> param) {
                 sorting.clear();
                 for (TableColumn c: param.getSortOrder()) {
-                    sorting.add(c.toString());
+                    sorting.add(c.getUserData() + " " + (c.getSortType() == SortType.ASCENDING ? "asc" : "desc"));
                 }
                 refreshData();
                 
@@ -254,6 +255,10 @@ public class TasksClosedController extends SectionController
 
         // Asignar los items a la tabla
         tblTasks.setItems(tareas);
+        
+        // Orden por defecto
+        colUpdate.setSortType(TableColumn.SortType.DESCENDING);
+        tblTasks.getSortOrder().addAll(colUpdate);
         
         // Refrescar la paginación
         refreshInternal();
@@ -451,7 +456,7 @@ public class TasksClosedController extends SectionController
     private void refreshData()
     {
         // Obtener las tareas
-        ListTable<Tarea> l = service.getTareasCerradas(offset, size, filterString, (String[])sorting.toArray());
+        ListTable<Tarea> l = service.getTareasCerradas(offset, size, filterString, sorting.toArray(new String[sorting.size()]));
         totalRecords = l.getTotal();
         tareas.clear();
         tareas.addAll(l.getRecords());

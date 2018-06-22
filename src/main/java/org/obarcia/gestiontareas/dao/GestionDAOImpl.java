@@ -9,6 +9,7 @@ import java.util.logging.Logger;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.JoinType;
+import javax.persistence.criteria.Order;
 import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
 import org.hibernate.Session;
@@ -169,8 +170,20 @@ public class GestionDAOImpl implements GestionDAO
             }
             
             // Order By
-            // TODO: Aplicar la ordenación
-            criteria.orderBy(builder.desc(root.get("actualizacion")));
+            if (sorting != null) {
+                Order[] sort = new Order[sorting.length];
+                for (int i = 0; i < sorting.length; i ++) {
+                    String[] spl = sorting[i].split(" ");
+                    if (spl.length > 1 && spl[1].toLowerCase().equals("desc")) {
+                        sort[i] = builder.desc(root.get(spl[0]));
+                    } else {
+                        sort[i] = builder.asc(root.get(spl[0]));
+                    }
+                }
+                criteria.orderBy(sort);
+            } else {
+                criteria.orderBy(builder.desc(root.get("actualizacion")));
+            }
         
             // Query
             list.setRecords(session.createQuery(criteria).setFirstResult(offset).setMaxResults(size).list());

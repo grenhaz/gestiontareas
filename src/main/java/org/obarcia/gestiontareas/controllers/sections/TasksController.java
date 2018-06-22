@@ -532,7 +532,7 @@ public class TasksController extends SectionController
     private void actionNewEntity(ActionEvent event)
     {
         Entidad entidad = new Entidad();
-        openWindow(Language.getString("TITLE_TASK_ENTITY"), "sections/Entity.fxml", entidad);
+        openWindow(Language.getString("TITLE_ENTITY_NEW"), "sections/Entity.fxml", entidad);
     }
     /**
      * Refrescar los datos.
