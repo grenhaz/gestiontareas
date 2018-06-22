@@ -24,20 +24,21 @@ public class DemoTest
      */
     private final GestionService service = GestionServiceImpl.getInstance();
     
+    /**
+     * Constructor de la clase.
+     */
     public DemoTest() {}
-    
     @BeforeClass
     public static void setUpClass() {}
-    
     @AfterClass
     public static void tearDownClass() {}
-    
     @Before
     public void setUp() {}
-    
     @After
     public void tearDown() {}
-
+    /**
+     * Generación de la DEMO.
+     */
     @Test
     public void demo()
     {
@@ -45,7 +46,7 @@ public class DemoTest
         Tarea t;
         
         List<Entidad> entidades = new ArrayList<>();
-        for (int i = 0; i < 100; i ++) {
+        for (int i = 0; i < 1000; i ++) {
             e = new Entidad();
             e.setDoi("76931598W");
             e.setNombre("ENTIDAD " + (i + 1));
@@ -55,7 +56,7 @@ public class DemoTest
             entidades.add(e);
         }
         
-        for (int i = 0; i < 100; i ++) {
+        for (int i = 0; i < 1000; i ++) {
             t = new Tarea();
             t.setTitulo("TAREA " + (i + 1));
             t.setPrioridad((int)(Math.random() * 2) == 0 ? Boolean.TRUE : Boolean.FALSE);
