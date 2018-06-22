@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="160.0" prefWidth="160.0" styleClass="splash" stylesheets="@../styles/Styles.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.obarcia.gestiontareas.controllers.SplashScreenController">
+   <children>
+      <ImageView fx:id="imgLoading" fitHeight="64.0" fitWidth="64.0" layoutX="32.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="48.0" AnchorPane.topAnchor="48.0">
+         <image>
+            <Image url="/images/loading.gif" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

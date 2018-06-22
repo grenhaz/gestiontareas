@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import org.obarcia.gestiontareas.components.control.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.obarcia.gestiontareas.controllers.sections.EntityController">
+   <children>
+      <Label layoutX="17.0" layoutY="23.0" text="%ATTRIBUTE_DOI" AnchorPane.leftAnchor="17.0" AnchorPane.topAnchor="25.0">
+         <tooltip>
+            <Tooltip text="%TOOLTIP_DOI" />
+         </tooltip></Label>
+      <CTextField fx:id="txtDoi" layoutX="90.0" layoutY="19.0" maxLength="9" prefHeight="25.0" prefWidth="150.0" styleClass="required" AnchorPane.leftAnchor="90.0" AnchorPane.topAnchor="19.0" />
+      <Label layoutX="14.0" layoutY="61.0" text="%ATTRIBUTE_NOMBRE" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="63.0">
+         <tooltip>
+            <Tooltip text="%TOOLTIP_NOMBRE" />
+         </tooltip></Label>
+      <CTextField fx:id="txtName" layoutX="90.0" layoutY="57.0" maxLength="256" prefHeight="25.0" prefWidth="353.0" styleClass="required" AnchorPane.leftAnchor="90.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="57.0" />
+      <Label layoutX="17.0" layoutY="95.0" text="%ATTRIBUTE_TELEFONO" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="97.0">
+         <tooltip>
+            <Tooltip text="%TOOLTIP_TELEFONO" />
+         </tooltip></Label>
+      <NumberTextField fx:id="txtPhone" layoutX="91.0" layoutY="91.0" maxLength="15" prefHeight="25.0" prefWidth="107.0" AnchorPane.leftAnchor="91.0" AnchorPane.topAnchor="91.0" />
+      <Label layoutX="209.0" layoutY="95.0" text="%ATTRIBUTE_FAX" AnchorPane.leftAnchor="230.0" AnchorPane.topAnchor="97.0">
+         <tooltip>
+            <Tooltip text="%TOOLTIP_FAX" />
+         </tooltip></Label>
+      <NumberTextField fx:id="txtFax" layoutX="288.0" layoutY="91.0" maxLength="15" prefHeight="25.0" prefWidth="107.0" AnchorPane.leftAnchor="288.0" />
+      <Label layoutX="17.0" layoutY="134.0" text="%ATTRIBUTE_OBSERVACIONES" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="134.0">
+         <tooltip>
+            <Tooltip text="%TOOLTIP_OBSERVACIONES" />
+         </tooltip></Label>
+      <TextArea fx:id="txtObservations" layoutX="19.0" layoutY="153.0" prefHeight="111.0" prefWidth="424.0" AnchorPane.bottomAnchor="58.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="153.0" />
+      <Button layoutX="341.0" layoutY="278.0" mnemonicParsing="false" onAction="#actionSave" text="%ACTION_SAVE" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="20.0" />
+   </children>
+</AnchorPane>

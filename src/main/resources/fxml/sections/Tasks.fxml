@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.obarcia.gestiontareas.controllers.sections.TasksController">
+    <center>
+        <TableView fx:id="tblTasks" prefHeight="600.0" prefWidth="800.0" />
+    </center>
+   <top>
+      <BorderPane BorderPane.alignment="CENTER">
+         <top>
+            <MenuBar BorderPane.alignment="CENTER">
+              <menus>
+                <Menu mnemonicParsing="false" text="%MENU_SYSTEM">
+                  <items>
+                        <MenuItem mnemonicParsing="false" onAction="#actionAbout">
+                           <graphic>
+                              <Label minWidth="100.0" text="%MENU_ABOUT" />
+                           </graphic>
+                        </MenuItem>
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem mnemonicParsing="false" onAction="#actionClose">
+                           <graphic>
+                              <Label minWidth="100.0" text="%MENU_CLOSE" />
+                           </graphic>
+                        </MenuItem>
+                  </items>
+                </Menu>
+                  <Menu mnemonicParsing="false" text="%MENU_ENTITIES">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#actionNewEntity">
+                           <graphic>
+                              <Label minWidth="100.0" text="%MENU_ENTITIES_NEW" />
+                           </graphic>
+                        </MenuItem>
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem mnemonicParsing="false" onAction="#actionEntities">
+                           <graphic>
+                              <Label minWidth="100.0" text="%MENU_ENTITIES_LIST" />
+                           </graphic>
+                        </MenuItem>
+                    </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="%MENU_TASKS">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#actionNewTask">
+                           <graphic>
+                              <Label minWidth="100.0" text="%MENU_TASKS_NEW" />
+                           </graphic>
+                        </MenuItem>
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem mnemonicParsing="false" onAction="#actionTasksClosed">
+                           <graphic>
+                              <Label minWidth="100.0" text="%MENU_TASKS_CLOSED_LIST" />
+                           </graphic>
+                        </MenuItem>
+                    </items>
+                  </Menu>
+              </menus>
+            </MenuBar>
+         </top>
+         <center>
+            <ToolBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+              <items>
+                <Button mnemonicParsing="false" onAction="#actionNewTask" text="%ACTION_TASK_NEW">
+                     <graphic>
+                        <ImageView fitHeight="14.0" fitWidth="14.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="/images/new.png" />
+                           </image>
+                        </ImageView>
+                     </graphic></Button>
+                  <Separator orientation="VERTICAL" />
+                  <ToggleButton mnemonicParsing="false" onAction="#actionShowLimited">
+                     <graphic>
+                        <HBox>
+                           <children>
+                              <Label text="%ACTION_ALERTS">
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </Label>
+                              <Label fx:id="lblAlertsWarnings" style="-fx-background-color: #ffcc00; -fx-background-radius: 8; -fx-border-color: #777; -fx-border-radius: 8;" text="0" textAlignment="CENTER">
+                                 <padding>
+                                    <Insets left="6.0" right="6.0" />
+                                 </padding>
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="6.0" right="2.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <Label fx:id="lblAlertsDangers" style="-fx-background-color: #DD8888; -fx-background-radius: 8; -fx-border-color: #777; -fx-border-radius: 8;" text="0" textAlignment="CENTER">
+                                 <padding>
+                                    <Insets left="6.0" right="6.0" />
+                                 </padding>
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="6.0" right="2.0" />
+                                 </HBox.margin>
+                              </Label>
+                           </children>
+                        </HBox>
+                     </graphic>
+                  </ToggleButton>
+                  <Separator orientation="VERTICAL" />
+                  <HBox layoutX="100.0" layoutY="326.0" AnchorPane.bottomAnchor="117.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="20.0">
+                    <children>
+                        <TextField fx:id="txtSearch" prefHeight="25.0" prefWidth="260.0" promptText="%PLACEHOLDER_SEARCH" styleClass="search" />
+                        <Button fx:id="btSearch" mnemonicParsing="false" onAction="#actionClearSearch" prefHeight="24.0" style="-fx-background-radius: 0 4 4 0;">
+                            <graphic>
+                               <ImageView fitHeight="12.0" fitWidth="12.0" pickOnBounds="true" preserveRatio="true">
+                                  <image>
+                                     <Image url="/images/clean.png" />
+                                  </image>
+                               </ImageView>
+                            </graphic>
+                            <HBox.margin>
+                               <Insets left="-3.0" top="0.0" />
+                            </HBox.margin>
+                         </Button>
+                    </children>
+                  </HBox>
+              </items>
+            </ToolBar>
+         </center>
+      </BorderPane>
+   </top>
+   <bottom>
+      <BorderPane BorderPane.alignment="CENTER">
+         <center>
+            <AnchorPane BorderPane.alignment="CENTER">
+               <children>
+                  <Label fx:id="lblStatus" focusTraversable="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                    <padding>
+                       <Insets left="8.0" right="8.0" />
+                    </padding></Label>
+               </children>
+            </AnchorPane>
+         </center>
+      </BorderPane>
+   </bottom>
+</BorderPane>

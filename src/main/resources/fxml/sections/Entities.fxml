@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.obarcia.gestiontareas.controllers.sections.EntitiesController">
+   <center>
+      <TableView fx:id="tblEntities" prefHeight="600.0" prefWidth="800.0" BorderPane.alignment="CENTER" />
+   </center>
+   <top>
+      <BorderPane BorderPane.alignment="CENTER">
+         <center>
+              <ToolBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                <items>
+                  <Button mnemonicParsing="false" onAction="#actionNewEntity" text="%ACTION_ENTITY_NEW">
+                     <graphic>
+                        <ImageView fitHeight="14.0" fitWidth="14.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="/images/new.png" />
+                           </image>
+                        </ImageView>
+                     </graphic></Button>
+                  <Separator orientation="VERTICAL" />
+                  <HBox layoutX="100.0" layoutY="326.0" AnchorPane.bottomAnchor="117.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="20.0">
+                    <children>
+                        <TextField fx:id="txtSearch" prefHeight="25.0" prefWidth="260.0" styleClass="search" promptText="%PLACEHOLDER_SEARCH" />
+                        <Button fx:id="btSearch" mnemonicParsing="false" prefHeight="24.0" onAction="#actionClearSearch" style="-fx-background-radius: 0 4 4 0;">
+                            <graphic>
+                               <ImageView fitHeight="12.0" fitWidth="12.0" pickOnBounds="true" preserveRatio="true">
+                                  <image>
+                                     <Image url="/images/clean.png" />
+                                  </image>
+                               </ImageView>
+                            </graphic>
+                            <HBox.margin>
+                               <Insets left="-3.0" top="0.0" />
+                            </HBox.margin>
+                         </Button>
+                    </children>
+                  </HBox>
+                </items>
+              </ToolBar>
+         </center>
+      </BorderPane>
+   </top>
+   <bottom>
+      <AnchorPane BorderPane.alignment="CENTER">
+         <children>
+            <Label fx:id="lblStatus" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+               <padding>
+                  <Insets left="8.0" right="8.0" />
+               </padding></Label>
+         </children>
+      </AnchorPane>
+   </bottom>
+</BorderPane>

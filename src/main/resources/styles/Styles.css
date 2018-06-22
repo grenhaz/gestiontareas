@@ -1,0 +1,36 @@
+.splash {
+    -fx-background-image: url('../images/splash.png');
+    -fx-background-color: transparent;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: left;
+}
+.search {
+    -fx-background-image: url('../images/search.png');
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: 4px center;
+    -fx-padding: 0 4px 0 24px;
+}
+CTextField.required, TextField.required {
+    -fx-background-image: url('../images/asterisk.png');
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: right center;
+    -fx-padding: 0 16px 0 4px;
+}
+.table-row-cell:empty {
+    -fx-background-color: white;
+}
+.table-row-cell:empty .table-cell {
+    -fx-border-width: 0px;
+}
+.form TextField:disabled,
+.form CTextField:disabled,
+.form TextArea:disabled,
+.form ComboBox:disabled,
+.form ComboBox:disabled .list-cell,
+.form CheckBox:disabled,
+.form DatePicker:disabled,
+.form DatePicker:disabled .text-field,
+.form DatePicker .text-field:disabled,
+.form Button:disabled {
+    -fx-opacity: 1;
+}

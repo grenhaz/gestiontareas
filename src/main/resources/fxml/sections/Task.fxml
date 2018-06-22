@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import org.obarcia.gestiontareas.components.control.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" styleClass="form" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.obarcia.gestiontareas.controllers.sections.TaskController">
+   <children>
+      <Label layoutX="24.0" layoutY="18.0" text="%ATTRIBUTE_TITULO" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="20.0">
+         <tooltip>
+            <Tooltip text="%TOOLTIP_TITULO" />
+         </tooltip></Label>
+      <CTextField fx:id="txtTitle" layoutX="90.0" layoutY="14.0" maxLength="256" prefHeight="25.0" prefWidth="500.0" styleClass="required" AnchorPane.leftAnchor="90.0" AnchorPane.rightAnchor="21.0" AnchorPane.topAnchor="14.0" />
+      <TextArea fx:id="txtContent" layoutX="24.0" layoutY="54.0" prefHeight="185.0" prefWidth="566.0" AnchorPane.bottomAnchor="150.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="50.0" />
+      <Label layoutX="21.0" layoutY="330.0" text="%ATTRIBUTE_ENTIDAD" AnchorPane.bottomAnchor="119.0" AnchorPane.leftAnchor="20.0">
+         <tooltip>
+            <Tooltip text="%TOOLTIP_ENTIDAD" />
+         </tooltip></Label>
+      <HBox layoutX="100.0" layoutY="326.0" onMouseClicked="#actionTextEntitySelect" AnchorPane.bottomAnchor="117.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="20.0">
+         <children>
+             <Button fx:id="btEntityClean" mnemonicParsing="false" onAction="#actionEntityClean" prefHeight="23.0" prefWidth="24.0" style="-fx-background-radius: 4 0 0 4;">
+               <graphic>
+                  <ImageView fitHeight="12.0" fitWidth="12.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="/images/clean.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <HBox.margin>
+                  <Insets right="-1.0" top="1.0" />
+               </HBox.margin>
+            </Button>
+            <TextField fx:id="txtEntity" disable="true" editable="false" prefHeight="25.0" style="-fx-background-radius: 0 0 0 0;" styleClass="entidad" HBox.hgrow="ALWAYS">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin></TextField>
+            <Button fx:id="btEntity" mnemonicParsing="false" onAction="#actionEntitySearch" prefHeight="23.0" prefWidth="24.0" style="-fx-background-radius: 0 4 4 0;">
+               <graphic>
+                  <ImageView fitHeight="12.0" fitWidth="12.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="/images/search.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <HBox.margin>
+                  <Insets left="-1.0" top="1.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+      <Label layoutX="24.0" layoutY="297.0" text="%ATTRIBUTE_ESTADO" AnchorPane.bottomAnchor="82.0" AnchorPane.leftAnchor="20.0">
+         <tooltip>
+            <Tooltip text="%TOOLTIP_ESTADO" />
+         </tooltip></Label>
+      <ComboBox fx:id="cbStatus" layoutX="90.0" layoutY="293.0" prefWidth="180.0" styleClass="required" AnchorPane.bottomAnchor="80.0" AnchorPane.leftAnchor="100.0" />
+      <Label layoutX="328.0" layoutY="406.0" text="%ATTRIBUTE_LIMITE" AnchorPane.bottomAnchor="82.0" AnchorPane.leftAnchor="300.0">
+         <tooltip>
+            <Tooltip text="%TOOLTIP_LIMITE" />
+         </tooltip></Label>
+      <HBox layoutX="366.0" layoutY="389.0" onMouseClicked="#actionTextEntitySelect" AnchorPane.bottomAnchor="80.0" AnchorPane.leftAnchor="380.0">
+         <children>
+             <Button fx:id="btLimiteClean" mnemonicParsing="false" onAction="#actionLimiteClean" prefHeight="25.0" prefWidth="24.0" style="-fx-background-radius: 4 0 0 4;">
+               <graphic>
+                  <ImageView fitHeight="12.0" fitWidth="12.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="/images/clean.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </Button>
+            <DatePicker fx:id="dtLimite" prefHeight="25.0" prefWidth="210.0" showWeekNumbers="false" style="-fx-background-radius: 0 4 4 0;" />
+         </children>
+      </HBox>
+      <CheckBox fx:id="chkPriority" layoutX="267.0" layoutY="297.0" mnemonicParsing="false" text="%ATTRIBUTE_PRIORIDAD" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="20.0">
+         <tooltip>
+            <Tooltip text="%TOOLTIP_PRIORIDAD" />
+         </tooltip></CheckBox>
+      <Button fx:id="btSave" layoutX="488.0" layoutY="429.0" mnemonicParsing="false" onAction="#actionSave" text="%ACTION_SAVE" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="20.0" />
+      <Button fx:id="btRestore" layoutX="468.0" layoutY="429.0" mnemonicParsing="false" onAction="#actionRestore" text="%ACTION_RESTORE" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="20.0" />
+   </children>
+</AnchorPane>
