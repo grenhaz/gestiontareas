@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+package org.obarcia.gestiontareas.test;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,7 +13,8 @@ import org.obarcia.gestiontareas.services.GestionService;
 import org.obarcia.gestiontareas.services.GestionServiceImpl;
 
 /**
- *
+ * Test para generar la demo.
+ * 
  * @author obarcia
  */
 public class DemoTest
@@ -31,10 +28,13 @@ public class DemoTest
     
     @BeforeClass
     public static void setUpClass() {}
+    
     @AfterClass
     public static void tearDownClass() {}
+    
     @Before
     public void setUp() {}
+    
     @After
     public void tearDown() {}
 
