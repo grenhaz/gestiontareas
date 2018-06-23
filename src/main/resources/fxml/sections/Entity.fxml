@@ -29,7 +29,7 @@
             <Tooltip text="%TOOLTIP_FAX" />
          </tooltip></Label>
       <NumberTextField fx:id="txtFax" layoutX="288.0" layoutY="91.0" maxLength="15" prefHeight="25.0" prefWidth="107.0" AnchorPane.leftAnchor="348.0" />
-      <Label layoutX="17.0" layoutY="134.0" text="%ATTRIBUTE_OBSERVACIONES" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="134.0">
+      <Label layoutX="17.0" layoutY="134.0" text="%ATTRIBUTE_OBSERVACIONES" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="130.0">
          <tooltip>
             <Tooltip text="%TOOLTIP_OBSERVACIONES" />
          </tooltip></Label>

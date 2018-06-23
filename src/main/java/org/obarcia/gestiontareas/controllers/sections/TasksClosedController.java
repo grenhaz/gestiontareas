@@ -24,6 +24,7 @@ import javafx.scene.control.TableRow;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.ContextMenuEvent;
 import javafx.scene.input.MouseButton;
 import javafx.util.Callback;
@@ -117,7 +118,8 @@ public class TasksClosedController extends SectionController
         TableColumn colEntity = new TableColumn(Language.getString("COLUMN_ENTITY"));
         TableColumn colTitle = new TableColumn(Language.getString("COLUMN_TITLE"));
         TableColumn colStatus = new TableColumn(Language.getString("COLUMN_STATUS"));
-        TableColumn colUpdate = new TableColumn(Language.getString("COLUMN_UPDATE"));
+        TableColumn colUpdate = new TableColumn("");
+        colUpdate.setGraphic(new ImageView("/images/clock.png"));
         
         // Asignar la columna de ordenación
         colId.setUserData("id");
@@ -135,9 +137,10 @@ public class TasksClosedController extends SectionController
         colStatus.setMinWidth(80);
         colStatus.setMaxWidth(80);
         colStatus.setResizable(false);
-        colUpdate.setMinWidth(80);
-        colUpdate.setMaxWidth(80);
+        colUpdate.setMinWidth(100);
+        colUpdate.setMaxWidth(100);
         colUpdate.setResizable(false);
+        colUpdate.setStyle("-fx-alignment: BASELINE_CENTER;");
         
         // Cell factory
         colId.setCellValueFactory(new PropertyValueFactory<>("id"));

@@ -140,20 +140,23 @@ public class TasksController extends SectionController
         colId.setMinWidth(64);
         colId.setMaxWidth(120);
         colPriority.setResizable(false);
-        colPriority.setMinWidth(22);
-        colPriority.setMaxWidth(22);
+        colPriority.setMinWidth(24);
+        colPriority.setMaxWidth(24);
+        colPriority.setStyle("-fx-alignment: BASELINE_CENTER;");
         colEntity.setMinWidth(150);
         colEntity.setMaxWidth(400);
-        colTitle.setMinWidth(300);
+        colTitle.setMinWidth(250);
         colStatus.setResizable(false);
         colStatus.setMinWidth(80);
         colStatus.setMaxWidth(80);
         colUpdate.setResizable(false);
-        colUpdate.setMinWidth(80);
-        colUpdate.setMaxWidth(80);
+        colUpdate.setMinWidth(90);
+        colUpdate.setMaxWidth(90);
+        colUpdate.setStyle("-fx-alignment: BASELINE_CENTER;");
         colLimit.setResizable(false);
-        colLimit.setMinWidth(80);
-        colLimit.setMaxWidth(80);
+        colLimit.setMinWidth(90);
+        colLimit.setMaxWidth(90);
+        colLimit.setStyle("-fx-alignment: BASELINE_CENTER;");
         
         // Cell factory
         colId.setCellValueFactory(new PropertyValueFactory<>("id"));
