@@ -4,7 +4,7 @@
 
     <groupId>org.obarcia</groupId>
     <artifactId>GestionTareas</artifactId>
-    <version>1.0</version>
+    <version>1.0.0</version>
     <packaging>jar</packaging>
 
     <name>GestionTareas</name>
@@ -12,6 +12,7 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <mainClass>org.obarcia.gestiontareas.MainApp</mainClass>
+        <app.version>1.0.0</app.version>
     </properties>
 
     <organization>
@@ -111,6 +112,9 @@
                                 <!-- =================================================== -->
                                 <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
                                     <mainClass>${mainClass}</mainClass>
+                                    <manifestEntries>
+                                        <Version-Number>${app.version}</Version-Number>
+                                    </manifestEntries>
                                 </transformer>
                             </transformers>
                             <!-- ============================================================ -->

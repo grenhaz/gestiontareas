@@ -461,7 +461,7 @@ public class TasksController extends SectionController
     private void actionAbout(ActionEvent event)
     {
         MessageBox.message(Language.getString("TITLE_ABOUT"), Language.getString("MESSAGE_ABOUT", new Object[]{
-            service.getConfig("version", "1")
+            Util.getVersion()
         }));
     }
     /**

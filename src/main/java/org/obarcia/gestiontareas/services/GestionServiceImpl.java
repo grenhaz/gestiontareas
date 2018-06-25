@@ -7,6 +7,7 @@ import javax.validation.Validation;
 import javax.validation.Validator;
 import javax.validation.ValidatorFactory;
 import org.obarcia.gestiontareas.components.ListTable;
+import org.obarcia.gestiontareas.components.Util;
 import org.obarcia.gestiontareas.dao.GestionDAO;
 import org.obarcia.gestiontareas.dao.GestionDAOImpl;
 import org.obarcia.gestiontareas.models.Entidad;
@@ -58,7 +59,7 @@ public class GestionServiceImpl implements GestionService
         dao.init();
         
         // Control de versiones
-        String version = getConfig("version", null);
+        String version = Util.getVersion();
         if (version == null) {
             save("version", "1");
         }

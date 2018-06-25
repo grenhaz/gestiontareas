@@ -4,7 +4,7 @@
   <groupId>org.obarcia</groupId>
   <artifactId>GestionTareas</artifactId>
   <name>GestionTareas</name>
-  <version>1.0</version>
+  <version>1.0.0</version>
   <organization>
     <name>Oscar Barcia</name>
   </organization>
@@ -31,6 +31,9 @@
               <transformers>
                 <transformer>
                   <mainClass>${mainClass}</mainClass>
+                  <manifestEntries>
+                    <Version-Number>${app.version}</Version-Number>
+                  </manifestEntries>
                 </transformer>
               </transformers>
               <filters>
@@ -64,6 +67,7 @@
     </dependency>
   </dependencies>
   <properties>
+    <app.version>1.0.0</app.version>
     <mainClass>org.obarcia.gestiontareas.MainApp</mainClass>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
