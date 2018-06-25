@@ -176,8 +176,9 @@ public class SectionController implements Initializable
                 st.getIcons().add(new Image("/images/logo.png"));
                 st.setTitle(title);
                 st.setScene(scene);
-                st.initOwner(getStage());
-                st.initModality(Modality.APPLICATION_MODAL);
+                // Ventana Modal
+                //st.initOwner(getStage());
+                //st.initModality(Modality.APPLICATION_MODAL);
                 
                 // Asignar los datos internos del controlador
                 if (ctrl != null && ctrl instanceof SectionController) {

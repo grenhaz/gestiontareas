@@ -193,6 +193,17 @@ public class TaskController extends SectionController
         dtLimite.setValue(null);
     }
     @Override
+    protected void onUpdate(boolean newRecord, Entidad entidad)
+    {
+        if (!newRecord) {
+            Tarea tarea = (Tarea)getData();
+            if (tarea != null && tarea.getEntidad() != null && tarea.getEntidad().getId().equals(entidad.getId())) {
+                tarea.setEntidad(entidad);
+                txtEntity.setText(entidad.getDoi() + " - " + entidad.getNombre());
+            }
+        }
+    }
+    @Override
     protected void onSelect(Stage parent, Entidad entidad)
     {
         if (parent != null && parent == getStage()) {
